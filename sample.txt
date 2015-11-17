@@ -1,7 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 mic test 1 2 3
 E04 Human bank
 OKKK
+=======
+mic test 1 2 3
+>>>>>>> parent of 2270917... df
 =======
 mic test 1 2 3
 >>>>>>> parent of 2270917... df

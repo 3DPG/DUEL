@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 123
+=======
+mic test 1 2 3
+E04 Human bank
+OKKK
+>>>>>>> parent of 82b9df2... Revert "df"

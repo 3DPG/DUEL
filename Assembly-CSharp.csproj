@@ -98,6 +98,8 @@
      <Compile Include="Assets\Source Folder\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\Source Folder\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\Source Folder\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\Start Menu\CameraRotate.cs" />
+     <Compile Include="Assets\Start Menu\UI.cs" />
      <None Include="Assets\Source Folder\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Source Folder\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Source Folder\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

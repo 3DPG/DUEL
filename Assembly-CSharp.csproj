@@ -45,6 +45,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Battle Mode\Script\HeroState.cs" />
      <Compile Include="Assets\Battle Mode\Script\Pattern.cs" />
      <Compile Include="Assets\Battle Mode\Script\Shooting.cs" />
      <Compile Include="Assets\MyFolder\Script\StoryScript.cs" />

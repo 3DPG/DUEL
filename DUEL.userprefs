@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Battle Mode\Script\Pattern.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Battle Mode\Script\HeroState.cs">
     <Files>
-      <File FileName="Assets\Battle Mode\Script\Pattern.cs" Line="38" Column="65" />
+      <File FileName="Assets\Battle Mode\Script\Pattern.cs" Line="27" Column="1" />
+      <File FileName="Assets\Battle Mode\Script\Shooting.cs" Line="11" Column="16" />
+      <File FileName="Assets\Battle Mode\Script\HeroState.cs" Line="19" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

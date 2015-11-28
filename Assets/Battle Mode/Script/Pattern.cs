@@ -8,8 +8,10 @@ public class Pattern : MonoBehaviour {
 	public GameObject firepoint1;
 	public GameObject firepoint2;
 	public GameObject CowBoy;
+	public GameObject Hero;
 	public GameObject GunFire;
 	public bool limit=false,limit1=false,limit2=false;
+	public bool hit_check;
 
 
 	Animator COW_ANI;
@@ -22,7 +24,7 @@ public class Pattern : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		hit_check = Shooting.hit_check;
 
 		//enemy0
 		counter += Time.deltaTime;
@@ -30,12 +32,14 @@ public class Pattern : MonoBehaviour {
 			limit=true;
 			GameObject new_ammo = (GameObject)Instantiate(ammo);
 			Debug.Log("new_ammo " + new_ammo.GetComponent<Collider>().enabled);
-			Debug.Log("CowBoy " + CowBoy.GetComponent<Collider>().enabled);
+			Debug.Log("Hero " + Hero.GetComponent<Collider>().enabled);
 			new_ammo.transform.position=firepoint.transform.position;
 			new_ammo.transform.rotation=firepoint.transform.rotation;
 			new_ammo.transform.Rotate( new Vector3(90, 0, 0) );
 			new_ammo.GetComponent<Rigidbody>().AddForce (firepoint.transform.forward*10000);
-			Physics.IgnoreCollision(new_ammo.GetComponent<Collider>(), CowBoy.GetComponent<Collider>());
+			if(hit_check==false){
+				Physics.IgnoreCollision(new_ammo.GetComponent<Collider>(),Hero.GetComponent<Collider>());
+			}
 			Destroy (new_ammo,2.0f);
 			GameObject newFire = (GameObject)Instantiate(GunFire);
 			newFire.transform.position = firepoint.transform.position;
@@ -53,7 +57,9 @@ public class Pattern : MonoBehaviour {
 			new_ammo.transform.rotation=firepoint1.transform.rotation;
 			new_ammo.transform.Rotate( new Vector3(90, 0, 0) );
 			new_ammo.GetComponent<Rigidbody>().AddForce (firepoint1.transform.forward*10000);
-			Physics.IgnoreCollision(new_ammo.GetComponent<Collider>(), CowBoy.GetComponent<Collider>());
+			if(hit_check==false){
+				Physics.IgnoreCollision(new_ammo.GetComponent<Collider>(),Hero.GetComponent<Collider>());
+			}
 			Destroy (new_ammo,2.0f);
 			GameObject newFire = (GameObject)Instantiate(GunFire);
 			newFire.transform.position = firepoint1.transform.position;
@@ -70,7 +76,9 @@ public class Pattern : MonoBehaviour {
 			new_ammo.transform.rotation=firepoint2.transform.rotation;
 			new_ammo.transform.Rotate( new Vector3(90, 0, 0) );
 			new_ammo.GetComponent<Rigidbody>().AddForce (firepoint2.transform.forward*10000);
-			Physics.IgnoreCollision(new_ammo.GetComponent<Collider>(), CowBoy.GetComponent<Collider>());
+			if(hit_check==false){
+				Physics.IgnoreCollision(new_ammo.GetComponent<Collider>(),Hero.GetComponent<Collider>());
+			}
 			Destroy (new_ammo,2.0f);
 			GameObject newFire = (GameObject)Instantiate(GunFire);
 			newFire.transform.position = firepoint2.transform.position;

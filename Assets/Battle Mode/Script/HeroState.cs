@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class HeroState : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+    public static bool dead_check = false;
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -16,6 +16,7 @@ public class HeroState : MonoBehaviour {
 	void OnCollisionEnter(Collision collision)
 	{
 		if (collision.transform.tag == "ammo"){
+            dead_check = true;
 			Debug.Log ("Game Over");
 		}
 	}

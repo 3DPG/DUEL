@@ -7,10 +7,12 @@ public class Shooting : MonoBehaviour {
 	public GameObject Enemy1,Enemy2,Enemy3,Cowboy;
 	float game_time = 0;
 	float next_time = 0;
-
-	public static bool hit_check=false;
-
-	GameObject ammo;
+    public bool dead_check;
+    public static bool hit_check=false;
+    public static bool em0_dead = false;
+    public static bool em1_dead = false;
+    public static bool em2_dead = false;
+    GameObject ammo;
 
 	Animator shoot;
 	// Use this for initialization
@@ -20,7 +22,8 @@ public class Shooting : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		game_time += Time.deltaTime;
+        dead_check = HeroState.dead_check;
+        game_time += Time.deltaTime;
 		if (gameState == GAME_STATE.SHOOT) {
 			hit_check = true;
 			if(game_time>next_time){
@@ -38,21 +41,32 @@ public class Shooting : MonoBehaviour {
 				next_time = game_time + 0.6f;
 				gameState = GAME_STATE.SHOOT;
 				shoot.SetTrigger ("Shoot");
-				Destroy (Enemy3, 0.6f);
+                if (!dead_check)
+                {
+                    Destroy(Enemy3, 0.6f);
+                    em2_dead = true;
+                }
 			}
 			if (GUI.Button (new Rect (100, 0, 100, 100), "Enemy2")) {
 				next_time = game_time + 0.6f;
 				gameState = GAME_STATE.SHOOT;
 				shoot.SetTrigger ("Shoot");
-				Destroy (Enemy2, 0.6f);
+                if (!dead_check)
+                {
+                    Destroy(Enemy2, 0.6f);
+                    em1_dead = true;
+                }
 			
 			}
 			if (GUI.Button (new Rect (200, 0, 100, 100), "Enemy1")) {
 				next_time = game_time + 0.6f;
 				gameState = GAME_STATE.SHOOT;
 				shoot.SetTrigger ("Shoot");
-				Destroy (Enemy1, 0.6f);
-			
+                if (!dead_check)
+                {
+                    Destroy(Enemy1, 0.6f);
+                    em0_dead = true;
+                }
 			}
 		}
 
